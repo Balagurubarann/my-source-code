@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #343f4f;
+    position: relative;
+}
+
+body, .quoteInput {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    background: #ccc;
+    padding: 1rem;
+    border-radius: .5rem;
+    width: 700px;
+    max-width: 90%;
+}
+
+.timer {
+    position: absolute;
+    top: 2rem;
+    font-size: 3rem;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.quote-display {
+    margin-bottom: 1rem;
+    margin-left: calc(1rem + 2px);
+    margin-right: calc(-1rem + 2px);
+}
+
+.quoteInput {
+    background-color: transparent;
+    border: 2px solid #222;
+    outline: none;
+    width: 100%;
+    height: 8rem;
+    margin: auto;
+    resize: none;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+}
+
+.quoteInput:focus {
+    border-color: #000;
+}
+
+.correct {
+    color: seagreen;
+}
+
+.incorrect {
+    color: red;
+    text-decoration: underline;
+}
+
+.score {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    font-size: 3rem;
+    color: #fff;
+}
+
+body .score-text {
+    position: absolute;
+    top: 4.5%;
+    right: 15%;
+    font-size: 3rem;
+    color: #fff;
+}
