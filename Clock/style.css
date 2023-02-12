@@ -1,0 +1,40 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #121624;
+}
+
+body {
+    height: 100vh;
+    background: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-container {
+    height: 200px;
+    width: 600px;
+    background: linear-gradient(-67deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1));
+    border-radius: 16px;
+    box-shadow: 0px 10px 32px 0px rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.colon {
+    transform: translateY(-4px);
+}
+
+.clock-text {
+    font-size: 3.5rem;
+    margin: 20px;
+    color: var(--primary-color);
+}
