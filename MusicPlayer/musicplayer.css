@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: ink-free, cursive;
+}
+
+:root {
+    --song-text: rgb(180, 211, 247);
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(0deg, rgb(180, 211, 247) 23.8%, rgb(221, 221, 252) 92.7%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.music-container {
+    height: 550px;
+    width: 350px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.37);
+    padding: 6px;
+}
+
+.img-container img {
+    height: 135px;
+    width: 135px;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+.img-container {
+    height: 45%;
+    width:inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-space {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    position: relative;
+}
+
+.song-space .song-title {
+    color: #000;
+    opacity: 0.8;
+}
+
+.time-limit {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    transform: translateY(25px);
+    font-size: 14px;
+}
+
+.progress-container {
+    height: 4px;
+    width: 100%;
+    background-color: #fff;
+    margin: 10px 0px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.progress-container .progress {
+    background: #000;
+    border-radius: 4px;
+    opacity: 0.8;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.button-container {
+    height: calc(100% - (45% + 10px));
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.button-container .shuffleBtn {
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    color: #000;
+    opacity: 0.5;
+}
+
+.shuffleBtn.shuffle {
+    opacity: 1;
+}
+
+.shuffleBtn.shuffle::after {
+    content: '';
+    height: 3px;
+    width: 3px;
+    display: inline-block;
+    background: #000;
+    position: absolute;
+    transform: translateY(24px) translateX(-11px);
+}
+
+.button-container .repeatBtn {
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    color: #000;
+    opacity: 0.5;
+}
+
+.repeatBtn.repeat {
+    opacity: 1;
+}
+
+.button-container button {
+    font-size: 18px;
+    margin: 0px 25px;
+    padding: 16px 24px;
+    border: none;
+    appearance: none;
+    outline: none; 
+    background: transparent;
+    cursor: pointer;
+    color: #000;
+    opacity: 0.7;
+}
+
+.button-container .big-btn {
+    font-size: 30px;
+}

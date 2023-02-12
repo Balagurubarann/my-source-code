@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="musicplayer.css">
+    <script src="musicplayer.js" defer></script>
+    <script src="functionality.js" type="module" defer></script>
+</head>
+<body>
+
+    <div class="music-container" id="main-board">
+        <div class="img-container" id="img-container">
+            <img src="icons/Disc_4.png" alt="Disc_img">
+        </div>
+        <div class="song-space">
+            <div class="song-title">
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress"></div>
+        </div>
+        <audio src="music/bad guy.mp3" class="audio"></audio>
+
+        <div class="button-container">
+
+            <button class="shuffleBtn action-btn shuffle">
+                <i class="fas fa-shuffle"></i>
+            </button>
+            
+            <button class="repeatBtn action-btn">
+                <i class="fas fa-repeat"></i>
+            </button>
+
+            <button id="prev" class="prevBtn action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+
+            <button id="play" class="playBtn action-btn big-btn">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <button id="next" class="nextBtn action-btn">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
+    
+</body>
+</html>
