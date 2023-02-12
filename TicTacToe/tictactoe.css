@@ -1,0 +1,148 @@
+* {
+	box-sizing: border-box;
+	font-family: ink-free, cursive;
+}
+
+:root {
+	--color-light: #343f4f;
+	--color-dark: seagreen;
+	--cell-size: 100px;
+	--doc-bg: #000;
+	--font-color: #fff;
+	--winning-blocks: transparent;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.container.dark {
+	background: #000;
+}
+
+.title {
+	color: var(--color-light);
+	font-size: 2.7	rem;
+}
+
+.title.dark {
+	color: var(--color-dark);
+}
+
+
+button {
+	border: none;
+	appearance: none;
+	outline: none;
+	padding: 12px 24px;
+	background: var(--color-light);
+	color: var(--font-color);
+	font-size: 1rem;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.restartBtn.dark {
+	background-color: var(--color-dark);
+}
+
+
+
+.board.dark .cell {
+	border: 2px solid var(--color-dark);
+	color: var(--font-color);
+	--winning-blocks: transparent;
+}	
+
+
+.board {
+	height: 300px;
+	width: 300px;
+	margin: 40px;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+}
+
+.board .cell {
+	height: var(--cell-size);
+	width: var(--cell-size);
+	border: 2px solid var(--color-light);
+	cursor: pointer;
+	text-align: center;
+	color: var(--color-light);
+	font-size: 4.5rem;
+}
+
+.board .cell:first-child,
+.board .cell:nth-child(2),
+.board .cell:nth-child(3) {
+	border-top: none;
+}
+
+.board .cell:last-child,
+.board .cell:nth-child(8),
+.board .cell:nth-child(7) {
+	border-bottom: none;
+}
+
+.board .cell:nth-child(3n + 1) {
+	border-left: none;
+}
+
+.board .cell:nth-child(3n + 3) {
+	border-right: none;
+}
+
+.check-section {
+	position: fixed;
+	top: 40px;
+	right: 60px;
+}
+
+.check {
+	height: 25px;
+	width: 25px;
+	display: none;
+	position: relative;
+}
+
+.check-bar {
+	display: inline-block;
+	height: 28px;
+	width: 56px;
+	border: 3px solid var(--color-light);
+	border-radius: 16px;
+
+	transition: all 150ms ease-in;
+}
+
+.check-bar::after {
+	content: '';
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	background: var(--color-light);
+	position: absolute;
+	border-radius: 50%;
+	transform: translateX(-1px) translateY(-2px);
+
+	transition: all 400ms ease-in;
+}
+
+.check.dark + .check-bar {
+	border: 3px solid var(--color-dark);
+}
+
+.check.dark + .check-bar::after {
+	background-color: var(--color-dark);
+}
+
+.check:checked + .check-bar::after {
+	transform: translateX(27.5px);
+}
+
