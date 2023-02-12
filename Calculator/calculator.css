@@ -1,0 +1,71 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+:root {
+
+    --pure-white: rgb(255, 255, 255);
+    --btn-color: rgba(255, 255, 255, .75);
+    --btn-hover: rgba(255, 255, 255, .20);
+    --primary-font-color: #2e2f5b;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #e1e8ed, #ccd6dd);
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #fff;
+    outline: none;
+
+    background: var(--btn-color);
+    color: var(--primary-font-color);
+
+    transition: .4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.calculator-grid > button:hover {
+    background-color: var(--btn-hover);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background: var(--primary-font-color);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: var(--btn-color);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: var(--pure-white);
+    font-size: 2.5rem;
+}
