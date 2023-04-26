@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --white: #222;
+    --cursor-color: #fff;
+    --cursor-point: #fff;
+}
+
+body {
+    height: 100vh;
+    background: url(assets/mountain.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    cursor: none;
+}
+
+.content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.content p {
+    width: 700px;
+    line-height: 26px;
+    text-align: justify;
+    color: var(--white);
+    /* color: #fff; */
+}
+
+.cursor {
+    position: fixed;
+
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--cursor-color);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+    transition-property: transform, background, opacity;
+}
+
+.cursor2 {
+    position: fixed;
+
+    width: 8px;
+    height: 8px;
+    /* border: 1px solid var(--cursor-color); */
+    border-radius: 50%;
+    background: var(--cursor-point);
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+    /* transition-property: transform, background, opacity; */
+}
+
+.content:hover ~ .cursor {
+    --cursor-hover: #eee;
+    background: var(--cursor-hover);
+    border: 2px solid var(--cursor-hover);
+    opacity: 0.4;
+}
+
+.content:hover ~ .cursor2 {
+    /* background: ; */
+    opacity: 0;
+}
