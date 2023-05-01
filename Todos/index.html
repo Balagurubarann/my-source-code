@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARAN'S TODO LIST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Shadows+Into+Light&family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1 class="title" style="letter-spacing: 2px;">BARAN'S TODO LIST</h1>
+    </header>
+
+    <form>
+        <input type="text" name="input-todo" class="todo-input" autofocus>
+        <button class="todo-btn" type="submit">
+            <i class="fas fa-plus-square"></i>
+        </button>
+
+        <div class="select">
+            <select name="todo-filter" class="todo-filter">
+                <option value="all">All</option>
+                <option value="complete">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+            </select>
+        </div>
+
+    </form>
+
+    <div class="todos-container">
+        <ul class="todo-list"></ul>
+    </div>
+    
+
+</body>
+</html>
