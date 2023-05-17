@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Shadows+Into+Light&family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="default.css">
+    <script src="./notes.js" defer></script>
+</head>
+<body>
+
+    <div class="note-creation-container" id="note-creation-container">
+        <button class="add-notes-btn" id="add-notes-btn" style="display: flex; justify-content: center;
+        align-items: center; gap: 1rem;">
+            <span>Add Notes</span> <i class="fa-solid fa-plus-square"></i>
+        </button>
+    </div>
+
+
+    <div class="notes-storage" id="notes-storage" draggable="true">
+        
+    </div>
+    
+
+
+    <div class="input-model-container" id="input-model-container">
+        <form class="input-section-form" id="input-section-form">
+            <label for="model-title" class="input-model-title" id="input-model-title">
+                <h3 class="model-title" id="model-title" style="font-weight: 300;">ADD NOTES</h3>
+            </label>
+            <input type="text" name="notes-title" id="notes-title" class="notes-title input-box">
+            <textarea name="notes-body" id="notes-body" class="notes-body input-textarea" maxlength="150"></textarea>
+            <div class="action-btn-group" id="action-btn-group" style="display: flex; justify-content: center;
+            align-items: center; gap: 4rem;">
+                <button type="submit" class="action-btn submit-btn" id="submit-btn" style="display: flex; justify-content: center;
+                align-items: center; gap: 1rem;">
+                    <span>Ok</span> <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="action-btn cancel-btn" id="cancel-btn" style="display: flex; justify-content: center;
+                align-items: center; gap: 1rem;">
+                    <span>Cancel</span> <i class="fa-solid fa-x"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+    <script>
+
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+
+    </script>
+
+
+
+    <!-- <div class="stored-notes" id="stored-notes">
+            <label class="note-title">
+                <h3 style="font-weight: 300;">Notes App Making</h3>
+            </label>
+            <div class="notes-content" id="notes-content">
+                Today I'm going to build a notes app using HTML CSS and JS
+            </div>
+            <div class="date-time" id="date-time">
+               May 2023-04-16 . 02.43pm
+            </div>
+        </div> -->
+</body>
+</html>
