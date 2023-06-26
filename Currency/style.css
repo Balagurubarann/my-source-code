@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap');
+
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --element-bg: #eee;
+    --white: #f7f7f7;
+    --black: #1b1b1b;
+}
+
+* {
+    font-family: var(--font-family);
+    letter-spacing: 2px;
+}
+
+
+.selector {
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+}
+
+input[type="number"] {
+    height: 25px;
+    width: 200px;
+}
+
+input[type="number"], 
+.selector,
+.btn {
+    border: none;
+    outline: none;
+    appearance: none;
+    padding: 12px 18px;
+    border-radius: 4px;
+    background-color: var(--element-bg);
+}
+
+.btn {
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+h2 {
+    text-align: center;
+    line-height: 100px;
+}
+
+::selection {
+    background-color: var(--black);
+    color: var(--element-bg);
+}
+
+body {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--element-bg);
+}
+
+.container {
+    padding: 2rem;
+    background-color: var(--white);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+}
+
+.red {
+    box-shadow: 0px 4px 10px 0px rgba(247, 116, 116, 0.8)
+    /* background-color: rgba(247, 116, 116, 0.8); */
+}
+
+.center { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.left-box, .right-box {
+    gap: 2rem;
+    margin: 1.5rem;
+}
+
+.btn:hover {
+    background-color: var(--black);
+    color: var(--element-bg);
+}
+
+option {
+    background-color: var(--black);
+    color: var(--element-bg);
+}
+
+option::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+}
