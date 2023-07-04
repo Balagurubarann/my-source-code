@@ -49,7 +49,7 @@ quoteInputElement.addEventListener('input', () => {
         }
     })
 
-    if (correct) renderNewQuotes();
+    if (correct) getQuotes();
 })
 
 async function getQuotes() {
