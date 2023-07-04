@@ -152,15 +152,20 @@
     }
 
     .contacts-div {
-        grid-template-columns: repeat(1, auto);
+        grid-template-columns: repeat(2, auto);
         padding-left: 8rem;
         place-items: center;
         gap: 4rem;
     }
 
+    .contact-div {
+        height: 100px;
+        width: 100px;
+    }
+
     .contact-div img {
-        height: 80px;
-        width: 80px;
+        height: 60px;
+        width: 60px;
     }
 
 }
