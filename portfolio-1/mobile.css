@@ -171,7 +171,7 @@
 }
 
 
-@media screen and (width < 500px) {
+@media screen and (max-width < 576px) {
     
     body {
         height: 100vh;
@@ -189,6 +189,13 @@
         transform: translateX(-60px);
 
         background-color: rgba(20 20 20 / 95%);
+    }
+
+    .contacts-div {
+        grid-template-columns: repeat(3, auto);
+        padding-left: 8rem;
+        place-items: center;
+        gap: 4rem;
     }
 }
 
