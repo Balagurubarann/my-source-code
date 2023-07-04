@@ -152,8 +152,8 @@
     }
 
     .contacts-div {
-        grid-template-columns: repeat(2, auto);
-        padding-left: 8rem;
+        grid-template-columns: repeat(3, auto);
+        padding-left: 2rem;
         place-items: center;
         gap: 4rem;
     }
