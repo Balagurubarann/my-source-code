@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins&display=swap');
+
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --container-bg: #0d1b2a;
+    --white: #f8f9fa;
+    --black: #1b1b1b;
+}
+
+* {
+    font-family: var(--font-family);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+::selection {
+    background: var(--black);
+    color: var(--white);
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"] {
+    width: 50%;
+    margin: .7rem 0rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+.remove {
+    padding: 12px 24px;
+
+    outline: none;
+    appearance: none;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--white);
+}
+
+i {
+    color: var(--black);
+    font-size: 1.105rem;
+}
+
+body {
+    height: 100vh;
+}
+
+.container {
+    padding: 2rem;
+    width: 40%;
+    background: var(--container-bg);
+    border-radius: 4px;
+}
+
+.output-container {
+    height: 20rem;
+    width: 90%;
+
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: var(--white);
+}
+
+.output-container .output {
+    text-align: justify;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
