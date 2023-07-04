@@ -1,6 +1,18 @@
-const Quote = ["Computer Science is a rapidly evolving field. In fact, to keep pace with its development", 
-"Acknowledgement is the most beautiful page in any project's final pages", "Asking the user a legal login-id performs authorization",
-"A system designed to prevent unauthorized access to or from a private network is called Firewall","October", "September", "Running"];
+// let Quote = ["Computer Science is a rapidly evolving field. In fact, to keep pace with its development", 
+// "Acknowledgement is the most beautiful page in any project's final pages", "Asking the user a legal login-id performs authorization",
+// "A system designed to prevent unauthorized access to or from a private network is called Firewall","October", "September", "Running"];
+
+
+let Quote = [];
+
+// fetch("https://type.fit/api/quotes")
+//     .then(function(response) {
+//         return response.json();
+//     })
+//     .then(function(data) {
+//        Quote = data;
+// });
+
 
 const displayElement = document.querySelector(".quote-display");
 const quoteInputElement = document.querySelector(".quoteInput");
@@ -40,14 +52,24 @@ quoteInputElement.addEventListener('input', () => {
     if (correct) renderNewQuotes();
 })
 
-function getQuotes() {
+async function getQuotes() {
 
-    return Quote[Math.floor(Math.random() * Quote.length)];
+    await fetch("https://type.fit/api/quotes")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+        Quote = data;
+        renderNewQuotes(Quote[Math.floor(Math.random() * Quote.length)].text);
+    });
+
+    // return Quote[Math.floor(Math.random() * Quote.length)];
+    
 }
 
-async function renderNewQuotes() {
+function renderNewQuotes(new_quote) {
 
-    const quote = getQuotes();
+    const quote = new_quote;
     displayElement.innerHTML = '';
     quote.split('').forEach(character => {
         const characterSpan = document.createElement('span');
@@ -73,4 +95,8 @@ function getTimerTime() {
     return Math.floor((new Date() - startTime) / 1000);
 }
 
-renderNewQuotes();
+// renderNewQuotes();
+
+
+getQuotes();
+
