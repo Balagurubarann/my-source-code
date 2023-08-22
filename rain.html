@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain</title>
+
+    <style>
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .canvas {
+            position: absolute;
+            top: 0; left: 0;
+            background: #000000;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <canvas class="canvas"></canvas>
+    
+
+    <script>
+
+        const canvas = document.querySelector('.canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const chi = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソト/ホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        const rus = 'Сейча́с в Миха́йловском за́мке нахо́дится Ру́сский музе́й. Сотру́дники музе́я не лю́бят остава́ться там ве́чером. Они́ говоря́т, что в пусто́м дворце́ открыва́ются и закрыва́ются две́ри и скрипи́т пол. Охра́нники иногда́ ви́дят фигу́ру челове́ка свечо́й в руке́. Когда́ э́то случа́ется они́ ти́хо говоря́т ей: «До́брой но́чи, Ва́ше ABCDEFGHIJKLMNOPQRSTUVWXY.'
+
+        class Symbol {
+
+            constructor(x, y, fontsize, height) {
+                this.characters = chi + rus;
+                this.x = x;
+                this.y = y;
+                this.text = '';
+                this.fontsize = fontsize;
+                this.height = height;
+            }
+
+            draw(context) {
+                this.text = this.characters.charAt(Math.floor(Math.random() * this.characters.length));
+                context.fillStyle = '#0aff0a';
+                context.fillText(this.text, this.x * this.fontsize, this.y * this.fontsize);
+
+                if (this.y * this.fontsize > this.height && Math.random() > .95) {
+                    this.y = 0;
+                } else {
+                    this.y += 1;
+                }
+            }
+
+        }
+
+        class Effect {
+
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.width = this.canvas.width;
+                this.height = this.canvas.height;
+                this.fontsize = 25;
+                this.columns = this.width / this.fontsize;
+                this.symbols = [];
+
+                this.#initialize();
+            }
+
+            #initialize() {
+                for (let i = 0; i < this.columns; i++) {
+                    this.symbols[i] = new Symbol(i, 0, this.fontsize, this.height);
+                }
+            }
+
+        }
+
+        const effect = new Effect(canvas);
+
+        function animate() {    
+
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.font = effect.fontsize + "px monospace";
+            effect.symbols.forEach(symbol => {
+                setTimeout(() => {
+                    symbol.draw(ctx);
+                }, 600);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+    </script>
+
+</body>
+</html>
